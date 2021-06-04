@@ -23,7 +23,8 @@ class JcFIASClient implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
-    const API_ENDPOINT = 'https://fias.jc9.ru/';
+//    const API_ENDPOINT = 'https://fias.jc9.ru/';
+    const API_ENDPOINT = 'http://localhost';
 
     const DEFAULT_HTTP_CLIENT_OPTIONS = [
         'connect_timeout' => 4,
