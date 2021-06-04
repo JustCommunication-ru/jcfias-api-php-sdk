@@ -1,0 +1,29 @@
+{
+    "name": "justcommunication-ru/jcfias-api-php-sdk",
+    "description": "jcfias API PHP SDK",
+    "keywords": [
+        "jcfias",
+        "api",
+        "sdk"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "psr/log": "*",
+        "guzzlehttp/guzzle": "^6.2",
+        "ext-json": "*"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "composer dumpautoload -o"
+        ],
+        "post-update-cmd": [
+            "composer dumpautoload -o"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "JustCommunication\\JcFIASSDK\\": "src/"
+        }
+    }
+}
