@@ -24,7 +24,8 @@ class SearchRequest extends AbstractRequest
     {
         $this->options = [
             'guid_path' => $params['guid_path'] ?? [],
-            'autocomplete' => isset($params['autocomplete'])
+            'autocomplete' => isset($params['autocomplete']),
+            'assumptions' => isset($params['assumptions'])
         ];
 
         $this->string = $string;
