@@ -23,7 +23,7 @@ class SearchRequest extends AbstractRequest
     public function __construct($string, $params = [])
     {
         $this->options = [
-            'guid_path' => isset($params['guid_path']) ? $params['guid_path'] : [],
+            'aoguids' => isset($params['aoguids']) ? $params['aoguids'] : [],
             'autocomplete' => isset($params['autocomplete']),
             'assumptions' => isset($params['assumptions'])
         ];

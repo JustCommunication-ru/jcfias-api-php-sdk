@@ -22,7 +22,7 @@ $params['assumptions'] = true;
 $params['autocomplete'] = true;
 
 // массив aoguid по базе ФИАС для ускорения поиска
-$params['guid_path'] = ['7b6de6a5-86d0-4735-b11a-499081111af8'];
+$params['aoguids'] = ['7b6de6a5-86d0-4735-b11a-499081111af8'];
 
 $response = $client->sendSearchRequest(new SearchRequest('владивосток', $params));
 ```
