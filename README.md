@@ -12,19 +12,16 @@ $client = new JcFIASClient('login', 'token');
 $token = JcFIASClient::getToken($login, $password);
 ```
 
-### Поиск
+### Поиск по строке
 
 ```php
-// дополнит ответ результатами, которые предположил скрипт, но которые не были найдены в ФИАС
-$params['assumptions'] = true;
+$defaultParams = [
+    'assumptions' => false, // дополнить ответ результатами, которые предположил скрипт, но которые не были найдены в ФИАС
+    'autocomplete' => false, // искаться результаты не по точному совпадению, а со *
+    'aoguids' => [] // массив aoguid по базе ФИАС для ускорения поиска
+];
 
-// результыты будут искаться не по точному совпадению, а со *
-$params['autocomplete'] = true;
-
-// массив aoguid по базе ФИАС для ускорения поиска
-$params['aoguids'] = ['7b6de6a5-86d0-4735-b11a-499081111af8'];
-
-$response = $client->sendSearchRequest(new SearchRequest('владивосток', $params));
+$response = $client->sendSearchRequest(new SearchRequest('владивосток', ['aoguids' => '43909681-d6e1-432d-b61f-ddac393cb5da']));
 ```
 
 ### Список регионов
