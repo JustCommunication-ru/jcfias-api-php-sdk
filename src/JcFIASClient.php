@@ -18,6 +18,8 @@ use Psr\Log\NullLogger;
  * @package JcFIASSDK
  *
  * @method API\SearchResponse sendSearchRequest(API\SearchRequest $request)
+ * @method API\TownsResponse sendTownsRequest(API\TownsRequest $request)
+ * @method API\RegionsResponse sendRegionsRequest(API\RegionsRequest $request)
  */
 class JcFIASClient implements LoggerAwareInterface
 {
