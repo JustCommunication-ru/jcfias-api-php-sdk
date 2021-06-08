@@ -21,7 +21,7 @@ $defaultParams = [
     'aoguids' => [] // массив aoguid по базе ФИАС для ускорения поиска
 ];
 
-$response = $client->sendSearchRequest(new SearchRequest('владивосток', ['aoguids' => '43909681-d6e1-432d-b61f-ddac393cb5da']));
+$response = $client->sendSearchRequest(new SearchRequest('владивосток', ['aoguids' => ['43909681-d6e1-432d-b61f-ddac393cb5da']]));
 ```
 
 ### Список регионов
