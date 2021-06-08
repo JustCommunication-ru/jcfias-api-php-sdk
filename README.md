@@ -26,3 +26,15 @@ $params['aoguids'] = ['7b6de6a5-86d0-4735-b11a-499081111af8'];
 
 $response = $client->sendSearchRequest(new SearchRequest('владивосток', $params));
 ```
+
+### Список регионов
+
+```php
+$response = $client->sendRegionsRequest(new RegionsRequest());
+```
+
+### Список городов
+
+```php
+$response = $client->sendTownsRequest(new TownsRequest());
+```
