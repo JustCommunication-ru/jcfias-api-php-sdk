@@ -23,9 +23,11 @@ class SearchRequest extends AbstractRequest
     public function __construct($string, $params = [])
     {
         $this->options = [
+            'town' => isset($params['town']) ? $params['town'] : '',
+            'region' => isset($params['region']) ? $params['region'] : '',
             'aoguids' => isset($params['aoguids']) ? $params['aoguids'] : [],
-            'autocomplete' => isset($params['autocomplete']),
-            'assumptions' => isset($params['assumptions'])
+            'assumptions' => isset($params['assumptions']),
+            'autocomplete' => isset($params['autocomplete'])
         ];
 
         $this->string = $string;
