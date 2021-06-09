@@ -2,10 +2,6 @@
 
 namespace JustCommunication\JcFIASSDK\API;
 
-use JustCommunication\JcFIASSDK\Model\AddressObject;
-use JustCommunication\JcFIASSDK\Model\House;
-use JustCommunication\JcFIASSDK\Model\Room;
-
 class SearchResponse extends AbstractResponse
 {
     /**
@@ -54,7 +50,7 @@ class SearchResponse extends AbstractResponse
     /**
      * @return int
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->count;
     }
@@ -62,7 +58,7 @@ class SearchResponse extends AbstractResponse
     /**
      * @return array
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->items;
     }
@@ -70,7 +66,7 @@ class SearchResponse extends AbstractResponse
     /**
      * @return array
      */
-    public function getAssumptions(): array
+    public function getAssumptions()
     {
         return $this->assumptions;
     }

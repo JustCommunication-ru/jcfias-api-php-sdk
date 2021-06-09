@@ -33,7 +33,7 @@ class TownsResponse extends AbstractResponse
     /**
      * @return int
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->count;
     }
@@ -41,7 +41,7 @@ class TownsResponse extends AbstractResponse
     /**
      * @return array
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->items;
     }
