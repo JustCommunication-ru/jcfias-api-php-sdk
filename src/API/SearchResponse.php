@@ -103,6 +103,36 @@ class SearchResponse extends AbstractResponse
                     switch ($object->shortname) {
                         case 'ул':
                         case 'ул.':
+                        case 'ал.':
+                        case 'аллея':
+                        case 'б-р':
+                        case 'б-г':
+                        case 'берег':
+                        case 'к-цо':
+                        case 'кв-л':
+                        case 'кольцо':
+                        case 'парк':
+                        case 'пер':
+                        case 'пер-д':
+                        case 'пер.':
+                        case 'переезд':
+                        case 'пл':
+                        case 'пл.':
+                        case 'пр-д':
+                        case 'пр-кт':
+                        case 'проезд':
+                        case 'проул.':
+                        case 'рзд':
+                        case 'с-к':
+                        case 'с-р':
+                        case 'сад':
+                        case 'сквер':
+                        case 'ст':
+                        case 'туп':
+                        case 'туп.':
+                        case 'ус.':
+                        case 'ш':
+                        case 'ш.':
                             $address->setStreet($object);
 
                             break;
