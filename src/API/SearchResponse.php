@@ -2,6 +2,11 @@
 
 namespace JustCommunication\JcFIASSDK\API;
 
+use JustCommunication\JcFIASSDK\Model\AddressModel;
+use JustCommunication\JcFIASSDK\Model\HouseModel;
+use JustCommunication\JcFIASSDK\Model\ObjectModel;
+use JustCommunication\JcFIASSDK\Model\RoomModel;
+
 class SearchResponse extends AbstractResponse
 {
     /**
@@ -10,14 +15,14 @@ class SearchResponse extends AbstractResponse
     protected $count = 0;
 
     /**
-     * @var array
+     * @var AddressModel[]
      */
-    protected $items = [];
+    protected $addresses = [];
 
     /**
-     * @var array
+     * @var AddressModel[]
      */
-    protected $assumptions = [];
+    protected $assumptions_addresses = [];
 
     /**
      * @inheritDoc
@@ -29,19 +34,11 @@ class SearchResponse extends AbstractResponse
         }
 
         if (!empty($data['items'])) {
-//            new AddressObject();
-//            new House();
-//            new Room();
-
-            $this->items = $data['items'];
+            $this->addresses = $this->mapAddresses($data['items']);
         }
 
         if (!empty($data['assumptions'])) {
-//            new AddressObject();
-//            new House();
-//            new Room();
-
-            $this->assumptions = $data['assumptions'];
+            $this->assumptions_addresses = $this->mapAddresses($data['assumptions']);
         }
 
         parent::setResponseData($data);
@@ -58,16 +55,85 @@ class SearchResponse extends AbstractResponse
     /**
      * @return array
      */
-    public function getItems()
+    public function getAddresses()
     {
-        return $this->items;
+        return $this->addresses;
     }
 
     /**
      * @return array
      */
-    public function getAssumptions()
+    public function getAssumptionsAddresses()
     {
-        return $this->assumptions;
+        return $this->assumptions_addresses;
+    }
+
+    private function mapAddresses($items)
+    {
+        $addresses = [];
+
+        foreach ($items as $item) {
+            $address = new AddressModel();
+
+            if ($item['address_objects']) {
+                foreach ($item['address_objects'] as $address_object) {
+                    $object = new ObjectModel();
+                    $object->mapData($address_object);
+
+                    $address->setObject($object);
+                }
+            }
+
+            if ($item['house']) {
+                $house = new HouseModel();
+                $house->mapData($item['house']);
+
+                $address->setHouse($house);
+            }
+
+            if ($item['room']) {
+                $room = new RoomModel();
+                $room->mapData($item['room']);
+
+                $address->setRoom($room);
+            }
+
+            if ($address->getObjects()) {
+                foreach ($address->getObjects() as $object) {
+                    switch ($object->shortname) {
+                        case 'ул':
+                        case 'ул.':
+                            $address->setStreet($object);
+
+                            break;
+                        case 'г':
+                        case 'г.':
+                            $address->setTown($object);
+
+                            break;
+                        case 'а.обл.':
+                        case 'а.окр.':
+                        case 'АО':
+                        case 'Аобл':
+                        case 'край':
+                        case 'м.о.':
+                        case 'м.р-н':
+                        case 'обл':
+                        case 'обл.':
+                        case 'округ':
+                        case 'р-н':
+                        case 'Респ':
+                        case 'Респ.':
+                            $address->setRegion($object);
+
+                            break;
+                    }
+                }
+            }
+
+            $addresses[] = $address;
+        }
+
+        return $addresses;
     }
 }

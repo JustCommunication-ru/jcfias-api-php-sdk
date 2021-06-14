@@ -2,7 +2,20 @@
 
 namespace JustCommunication\JcFIASSDK\Model;
 
-class RoomModel
+class RoomModel extends AbstractModel
 {
+    /**
+     * @var string
+     */
+    public $roomguid;
 
+    /**
+     * @var string
+     */
+    public $houseguid;
+
+    /**
+     * @var string
+     */
+    public $flatnumber;
 }
