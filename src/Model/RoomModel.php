@@ -2,7 +2,7 @@
 
 namespace JustCommunication\JcFIASSDK\Model;
 
-class AddressObject
+class RoomModel
 {
 
 }
