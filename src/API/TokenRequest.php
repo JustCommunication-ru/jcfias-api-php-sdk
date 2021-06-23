@@ -4,7 +4,7 @@ namespace JustCommunication\JcFIASSDK\API;
 
 class TokenRequest extends AbstractRequest
 {
-    const URI = '/api/token';
+    const URI = '/token';
     const HTTP_METHOD = 'POST';
     const RESPONSE_CLASS = TokenResponse::class;
 
