@@ -4,7 +4,7 @@ namespace JustCommunication\JcFIASSDK\API;
 
 class SearchRequest extends AbstractRequest
 {
-    const URI = '/api/search';
+    const URI = '/search';
     const HTTP_METHOD = 'GET';
     const RESPONSE_CLASS = SearchResponse::class;
 
