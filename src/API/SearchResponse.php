@@ -100,7 +100,7 @@ class SearchResponse extends AbstractResponse
 
             if ($address->getObjects()) {
                 foreach ($address->getObjects() as $object) {
-                    switch ($object->shortname) {
+                    switch (mb_strtolower($object->shortname)) {
                         case 'ул':
                         case 'ул.':
                         case 'ал.':
@@ -143,8 +143,8 @@ class SearchResponse extends AbstractResponse
                             break;
                         case 'а.обл.':
                         case 'а.окр.':
-                        case 'АО':
-                        case 'Аобл':
+                        case 'ао':
+                        case 'аобл':
                         case 'край':
                         case 'м.о.':
                         case 'м.р-н':
@@ -152,8 +152,8 @@ class SearchResponse extends AbstractResponse
                         case 'обл.':
                         case 'округ':
                         case 'р-н':
-                        case 'Респ':
-                        case 'Респ.':
+                        case 'респ':
+                        case 'респ.':
                             $address->setRegion($object);
 
                             break;
