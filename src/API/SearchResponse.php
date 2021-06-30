@@ -75,7 +75,7 @@ class SearchResponse extends AbstractResponse
         foreach ($items as $item) {
             $address = new AddressModel();
 
-            if ($item['address_objects']) {
+            if (!empty($item['address_objects'])) {
                 foreach ($item['address_objects'] as $address_object) {
                     $object = new ObjectModel();
                     $object->mapData($address_object);
@@ -84,14 +84,14 @@ class SearchResponse extends AbstractResponse
                 }
             }
 
-            if ($item['house']) {
+            if (!empty($item['house'])) {
                 $house = new HouseModel();
                 $house->mapData($item['house']);
 
                 $address->setHouse($house);
             }
 
-            if ($item['room']) {
+            if (!empty($item['room'])) {
                 $room = new RoomModel();
                 $room->mapData($item['room']);
 
