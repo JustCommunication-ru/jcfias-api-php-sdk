@@ -18,4 +18,9 @@ class RoomModel extends AbstractModel
      * @var string
      */
     public $flatnumber;
+
+    public function __toString()
+    {
+        return $this->flatnumber;
+    }
 }

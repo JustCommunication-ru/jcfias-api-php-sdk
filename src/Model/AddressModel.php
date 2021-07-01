@@ -129,4 +129,25 @@ class AddressModel extends AbstractModel
     {
         $this->street = $street;
     }
+
+    public function __toString()
+    {
+        $result = [];
+
+        if ($this->objects) {
+            foreach ($this->objects as $object) {
+                $result[] = (string)$object;
+            }
+        }
+
+        if ($this->house) {
+            $result[] = (string)$this->house;
+        }
+
+        if ($this->room) {
+            $result[] = (string)$this->room;
+        }
+
+        return join(' ', $result);
+    }
 }

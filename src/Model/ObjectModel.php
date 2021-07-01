@@ -28,4 +28,9 @@ class ObjectModel extends AbstractModel
      * @var string
      */
     public $shortname;
+
+    public function __toString()
+    {
+        return $this->shortname . ' ' . $this->formalname;
+    }
 }
