@@ -16,7 +16,7 @@ $token = JcFIASClient::getToken($login, $password);
 
 ```php
 $defaultParams = [
-    'assumptions' => false, // дополнить ответ результатами, которые предположил скрипт, но которые не были найдены в ФИАС
+    'assumptions' => false, // ответ с результатами, которые не были найдены в ФИАС
     'autocomplete' => false // искаться результаты не по точному совпадению, а со *
 ];
 
