@@ -21,6 +21,7 @@ $defaultParams = [
 ];
 
 $response = $client->sendSearchRequest(new SearchRequest('владивосток', ['assumptions' => true]));
+```
 
 ### Список регионов
 
