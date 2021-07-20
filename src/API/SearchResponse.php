@@ -111,6 +111,7 @@ class SearchResponse extends AbstractResponse
                         case 'к-цо':
                         case 'кв-л':
                         case 'кольцо':
+                        case 'наб':
                         case 'парк':
                         case 'пер':
                         case 'пер-д':
