@@ -11,7 +11,8 @@
     "require": {
         "psr/log": "*",
         "guzzlehttp/guzzle": "^6.2",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-mbstring": "*"
     },
     "scripts": {
         "post-install-cmd": [
