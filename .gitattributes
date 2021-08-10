@@ -1,0 +1,19 @@
+* text=auto
+
+# force text
+*.html text
+*.js text
+*.css text
+*.php text
+
+# binary files
+*.jpg -text
+*.jpeg -text
+*.png -text
+*.gif -text
+*.svg -text
+
+# Unix files (need LF)
+*.sh eol=lf
+*.cmd eol=lf
+*.cron eol=lf

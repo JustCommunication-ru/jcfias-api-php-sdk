@@ -18,7 +18,7 @@ class SearchRequest extends AbstractRequest
     /**
      * SearchRequest constructor.
      *
-     * @param int $string
+     * @param string|array $string
      */
     public function __construct($string, $params = [])
     {
