@@ -32,7 +32,7 @@ $defaultParams = [
 ];
 
 /** @var SearchBatchResponse $response */
-$response = $client->sendSearchBatchRequest(new SearchBatchRequest(['владивосток', 'москва братиславская']));
+$response = $client->sendSearchBatchRequest(new SearchBatchRequest(['владивосток', 'москва минская']));
 ```
 
 ### Список регионов
