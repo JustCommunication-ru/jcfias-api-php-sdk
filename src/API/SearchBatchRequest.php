@@ -17,8 +17,6 @@ class SearchBatchRequest extends SearchRequest
             $string = [$string];
         }
 
-        unset($params['autocomplete']);
-
         parent::__construct($string, $params);
     }
 }
