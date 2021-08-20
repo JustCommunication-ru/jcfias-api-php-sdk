@@ -1,3 +1,10 @@
+# JcFias API PHP SDK
+
+[![Latest Stable Version](https://poser.pugx.org/justcommunication-ru/jcfias-api-php-sdk/v)](//packagist.org/packages/justcommunication-ru/jcfias-api-php-sdk) 
+[![Total Downloads](https://poser.pugx.org/justcommunication-ru/jcfias-api-php-sdk/downloads)](//packagist.org/packages/justcommunication-ru/jcfias-api-php-sdk) 
+
+PHP SDK для JcFias API
+
 ## Использование
 
 ```php
