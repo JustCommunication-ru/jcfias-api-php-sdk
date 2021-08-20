@@ -5,6 +5,10 @@
 
 PHP SDK для JcFias API
 
+## Установка
+
+`composer require justcommunication-ru/jcfias-api-php-sdk`
+
 ## Использование
 
 ```php
