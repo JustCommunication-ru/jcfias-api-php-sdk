@@ -28,7 +28,8 @@ $token = JcFIASClient::getToken($login, $password);
 ```php
 $defaultParams = [
     'assumptions' => false, // ответ с результатами, которые не были найдены в ФИАС
-    'autocomplete' => false // искаться результаты не по точному совпадению, а со *
+    'autocomplete' => false, // искаться результаты не по точному совпадению, а со *
+    'house_number_not_exact' => false
 ];
 
 /** @var SearchResponse $response */
